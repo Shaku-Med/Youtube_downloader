@@ -1,40 +1,32 @@
-# # Function to convert decimal number
-# # to binary using recursion
-# def DecimalToBinary(num):
-     
-#     if num >= 1:
-#         DecimalToBinary(num // 2)
-#     print(num % 2, end = '')
- 
-# # Driver Code
-# if __name__ == '__main__':
-     
-#     # decimal value
-#     dec_val = 24
-     
-#     # Calling function
-#     DecimalToBinary(dec_val)
+import requests
+import json
+import os
 
+url = "https://ssyoutube.com/api/convert"
+data = {"url": "https://www.youtube.com/watch?v=DPBRGWUgQsA&list=RDcrtQSTYWtqE&index=2"}
+headers = {
+    "referer": "https://ssyoutube.com/en53/youtube-video-downloader"
+}
 
-# This is socket.io with python.
+array = []
 
-from aiohttp import web
-import socketio
+x = requests.post(url, data, headers)
+print(x.text)
+# jsobj = json.loads(x.text)
 
-sio = socketio.AsyncServer()
-app = web.Application()
-sio.attach(app)
+# checkexist = os.path.isfile('./hack.json')
 
+# if checkexist == False:
+#     f = open('./hack.json', 'r')
+#     array = f.read()
+#     print(array)
 
-async def index(request):
-    with open('index.html') as f:
-        return web.Response(text=f.read(), content_type='text/html')
-
-
-@sio.on('message')
-async def print_message(sid, message):
-    print(message)
-
-app.router.add_get('/', index)
-
-web.run_app(app)
+#     with open('hack.json', 'r') as newfile:
+#         print("hi")
+# else:
+#     f = open('./hack.json', 'r')
+#     array = f.read()
+#     jsonload = json.loads(array)
+#     jsonarr = json.dumps(jsonload)
+#     with open('hack.json', 'r') as newfile:
+#         jsonarr.
